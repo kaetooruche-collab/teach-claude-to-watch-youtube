@@ -14,8 +14,12 @@ Claude *can* read — metadata, a transcript, and a contact sheet of frames.
 1. Run the pipeline (strip tracking params like `?xtok=` — the script does this):
 
    ```bash
-   python3 .claude/skills/watch-instagram-reel/scripts/watch_reel.py "<reel-url>" --out "$SCRATCH/reel"
+   python3 <skill-dir>/scripts/watch_reel.py "<reel-url>" --out ./reel_out
    ```
+
+   `<skill-dir>` is this skill's folder (`~/.claude/skills/watch-instagram-reel` when
+   installed globally, or `.claude/skills/watch-instagram-reel` in a project).
+   Needs `python3` and `ffmpeg`; `yt-dlp` and `faster-whisper` auto-install.
 
    Optional flags: `--cookies cookies.txt` (Netscape format, for login-walled
    or age/region-restricted reels), `--cookies-from-browser chrome`,
